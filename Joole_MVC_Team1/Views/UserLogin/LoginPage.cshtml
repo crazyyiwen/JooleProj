@@ -1,0 +1,123 @@
+﻿@using Services.Models
+@model Services.Models.SignUpInfoService
+@{
+    Layout = null;
+}
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/cssdemo.css" rel="stylesheet" />
+    <script src="~/Content/script_demo.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title>LoginPage</title>
+</head>
+<body style="overflow:hidden;">
+    <div class="color-gradient">
+
+        <!--configure the popup form-->
+
+
+
+        <div id="abc">
+
+
+            <div style="border-radius: 5px; height:420px; width:430px; background-color:azure; opacity: .80;" id="popupContact">
+                @using (Html.BeginForm("SignUpPage", "UserLogin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <form style="height:430px; width:350px; background-color:white;" name="form">
+                        <p style="font-size:20px; float:left">Register as User</p>
+                        <span id='close' style="border-radius: 5px;">x</span>
+                        <br />
+                        <br />
+                        <hr style="border: 0.6px solid grey;">
+                        <!--Upload the image part-->
+                        @*<label></label>*@
+                        <div align="center">
+                            <p>Image Preview</p>
+                            <img id="imagepreview" class="circular-img" src=" ">
+                            <br />
+                            <div align="center">
+                                @Html.TextBoxFor(m => m.Source, null, new { type="file", style = "display: ; margin-left: 105px;", onchange = "readURL(this);", id = "image", name = "file", accept = ".jpg, .jpeg, .png" })
+                                @*<input type="file" style="display: ; margin-left: 105px" onchange="readURL(this);" id="image" name="file" accept=".jpg, .jpeg, .png" multiple />*@
+                            </div>
+                        </div> 
+                        <!----------------------------------------signup part------------------------------------------>
+                        <div>
+                            @Html.LabelFor(x => x.UserName)
+                            @Html.TextBoxFor(x => x.UserName, new { autocomplete = "off", style = "width:200px; border-radius: 1px; border-radius: 3px; border: 0.3px solid grey;", required="required"})
+                            @*@Html.ValidationMessageFor(x => x.UserName)*@
+                        </div>
+                        @*<input name="UserName" placeholder="UserName" type="text"><br />*@
+                        @*<label>Email Address:</label>*@
+                        <div>
+                            @Html.LabelFor(x => x.EmailAddress)
+                            @Html.TextBoxFor(x => x.EmailAddress, new { autocomplete = "off", style = "width:200px; border-radius: 1px; border-radius: 3px; border: 0.3px solid grey;", required = "required" })
+                            @*@Html.ValidationMessageFor(x => x.EmailAddress)*@
+                        </div>
+                        @*<input name="Email_Address" placeholder="Email Address" type="text"><br />*@
+                        @*<label>Password:</label>*@
+                        <div>
+                            @Html.LabelFor(x => x.Password)
+                            @Html.TextBoxFor(x => x.Password, new { autocomplete = "off", id ="password", style = "width:200px; border-radius: 1px; border-radius: 3px; border: 0.3px solid grey;", required = "required", onkeyup="check()" })
+                            @*@Html.ValidationMessageFor(x => x.Password)*@
+                        </div>
+                        @*<input name="Password" placeholder="Password" type="text"><br />*@
+                        @*<label>Confirm Password:</label>*@
+                        <div>
+                            @Html.LabelFor(x => x.ConfirmPassword)
+                            @Html.TextBoxFor(x => x.ConfirmPassword, new { autocomplete = "off", id ="cpassword", style = "width:200px; border-radius: 1px; border-radius: 3px; border: 0.3px solid grey;", required = "required", onkeyup="check()" })
+                            <span id="message"></span>
+                            @*@Html.ValidationMessageFor(x => x.ConfirmPassword)*@
+                        </div>
+                        @*<input name="Confirm_Password" placeholder="Confirm Password" type="text"><br />*@
+                        <!---------------------------------------------------------------------------------------------->
+                        <hr style="border: 0.6px solid grey;">
+                        <input id="submit" type="submit" value="Sign Up" style="float:right; background-color: #2D7EC3; border-radius: 2px; border: none;" />
+                    </form>
+                }
+            </div>
+        </div>
+
+        <!---->
+        <div style="width: 1000px; height: 30px;" align="right">
+            <button id="Sign Up" onclick="popUp_show()" align="right" style="background-color: #317BA9; color: black;border: none;">SignUp</button>
+        </div>
+        
+
+        @using (Html.BeginForm("LoginPage", "UserLogin", FormMethod.Post))
+        {
+            <form >
+                <div class="centerlook" align="center" style="margin-top: 120px;">
+                    <h1 style="font-size: 120px;">jOOle</h1>
+                </div>
+
+                <div class="centerlook" align="center">
+                    <h1 style="font-size: 20px; margin-top: 30px;"> Building Product Selection PlatForm </h1>
+                </div>
+
+                <!--Sign in part-->
+                <div class="centerlook">
+                    @*@Html.LabelFor(x => x.UserLoginName)*@
+                    @Html.TextBoxFor(x => x.UserLoginName, new {id="icon1", placeholder="Username or Email", style= "width: 400px; height: 32px; margin-bottom: 8px; border: none; border-radius: 2px;" })
+                    @Html.ValidationMessageFor(x => x.UserLoginName)
+                </div>
+                <div class="centerlook">
+                    @*@Html.LabelFor(x => x.UserLoginPassword)*@
+                    @Html.TextBoxFor(x => x.UserLoginPassword, new { id = "icon2", placeholder = "Password", style = "width: 400px; height: 32px; margin-bottom: 8px; border: none; border-radius: 2px;" })
+                    @Html.ValidationMessageFor(x => x.UserLoginPassword)
+                </div>
+                <!---->
+
+                <div class="centerlook" align="right">
+                    <input type="submit" name="submitLogin" value="Log in" style="background-color: #3879B3; border: none; border-radius: 2px;" />
+                </div>
+            </form>
+        }
+
+    </div>
+</body>
+</html>

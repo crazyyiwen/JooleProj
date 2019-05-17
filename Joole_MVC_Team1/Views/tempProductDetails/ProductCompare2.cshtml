@@ -1,0 +1,147 @@
+﻿@model Joole_MVC_Team1.Models.ProductCmpViewModel
+
+@{
+    ViewBag.Title = "ProductCompare";
+}
+    <style>
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+<h2>Product Compare</h2>
+
+<div>
+    
+    <hr />
+    <div class="row" style="display:flex; width :50%;">
+        <div class="column" style="flex:70%;">
+            <table style="border-collapse:collapse;">
+
+                <tr>
+                    <th colspan="3">COMPARE</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.Manufacture)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.Manufacture)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.Manufacture)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.Series)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.Series)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.Series)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.Model)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.Model)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.Model)
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th colspan="3">TYPE</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.UseType)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.UseType)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.UseType)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.Application)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.Application)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.Application)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.MountingLoaction)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.MountingLoaction)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.MountingLoaction)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.Accessories)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.Accessories)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.Accessories)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.ModelYear)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.ModelYear)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.ModelYear)
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+<p>
+   
+    @Html.ActionLink("Back to List", "Index")
+</p>

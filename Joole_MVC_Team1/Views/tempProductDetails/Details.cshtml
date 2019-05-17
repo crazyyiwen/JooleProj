@@ -1,0 +1,143 @@
+﻿@model Joole_MVC_Team1.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    th,td {
+        border:1px solid #dddddd; 
+        text-align:left; 
+        padding:8px;
+    }
+    tr:nth-child(even){
+        background-color:#dddddd;
+    }
+</style>
+<h2>Product Summary</h2>
+
+    <hr />
+
+    <div class="row" style="display:flex; width : 50%;">
+        <div class="column" style="flex:70%;">
+            <table style="border-collapse:collapse">
+
+                <tr>
+                    <th colspan="2">DESCRIPTION</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Manufacture)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.Manufacture)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Series)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.Series)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Model)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.Model)
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">TYPE</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.UseType)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.UseType)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Application)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.Application)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.MountingLoaction)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.MountingLoaction)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Accessories)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.Accessories)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.ModelYear)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.ModelYear)
+                    </td>
+                </tr>
+            </table>
+       
+        </div>
+
+        <div class="column ">
+            <table>
+
+                <tr>
+                    <th colspan="2">TECHNICAL SPECIFICATION</th>
+                </tr>
+
+                <tr>
+                    <td>1<br /></td>
+                    <td>2<br /></td>
+                </tr>
+
+                <tr>
+                    <td>1<br /></td>
+                    <td>2<br /></td>
+                </tr>
+
+                <tr>
+                    <td>1<br /></td>
+                    <td>2<br /></td>
+                </tr>
+
+                <tr>
+                    <td>1<br /></td>
+                    <td>2<br /></td>
+                </tr>
+
+
+
+            </table>
+        </div>
+    </div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.productID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,49 @@
+﻿@model Services.Models.SearchViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <input type="hidden" id="subCategoryId" value="@Model.subCategoryId" />
+    <div class="col-sm-3 search-section">
+        <div class="buttons-section">
+            <button type="button" class="btn btn-primary">Compare</button>
+        </div>
+        <div class="spec-title">
+            @foreach (var filter in Model.typeFilters)
+            {
+                @Html.DisplayFor(modelItem => filter.typeName)
+                <select class="typeFilter" id="@Html.DisplayFor(modelItem => filter.propertyId)-@Html.DisplayFor(modelItem => filter.typeName)">
+                    <option selected></option>
+                    @foreach (var option in filter.typeOptions)
+                        {
+                            <option class="typeOption">@option</option>
+                        }
+                </select>
+            }
+        </div>
+        <div class="spec-title">
+            <label>Model Year:</label>
+            <input type="number" class="model-year" id="model-year-bottom" />
+            -
+            <input type="number" class="model-year" id="model-year-top" />
+        </div>
+        <div class="spec-title">Technical Specifications</div>
+        <div id="sliders">
+            @foreach (var filter in Model.specFilters)
+            {
+            <div id="@Html.DisplayFor(modelItem => filter.propertyId)-spec-filter" class="filter">
+                <div class="filter-name">@Html.DisplayFor(modelItem => filter.propertyName)</div>
+                <div class="min range-block">@Html.DisplayFor(modelItem => filter.min)</div>
+                <div class="slider"></div>
+                <div class="max range-block">@Html.DisplayFor(modelItem => filter.max)</div>
+            </div>
+            }
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div id="products"></div>
+    </div>
+</div>
+

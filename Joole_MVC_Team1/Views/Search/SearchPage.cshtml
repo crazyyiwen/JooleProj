@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joole - Building Product Selection Platform</title>
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="body-background">
+        <div class="container body-content">
+            <div class="row search-page">
+                <img src="~/Images/joole_logo.png" />
+                <div class="marketing">Building Product Selection Platform</div>
+                <div class="dropdown dropdown-search">
+                    <input id="categoryId" type="hidden" />
+                    <button class="btn btn-primary dropdown-toggle" id="categoryMenu" type="button" data-toggle="dropdown">
+                        Category
+                        <span class="caret"></span>
+                    </button>
+                    <input type="text" id="subCategory" />
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom.js"></script>
+</body>
+</html>
+

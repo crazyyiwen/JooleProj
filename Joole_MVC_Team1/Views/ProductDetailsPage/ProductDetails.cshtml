@@ -1,0 +1,191 @@
+﻿@model Joole_MVC_Team1.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            /*border: 1px solid #ccc;
+            background-color: #f1f1f1;*/
+        }
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #F8F8F8;
+            }
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            /*border: 1px solid #ccc;*/
+            border-top: none;
+        }
+        #alignh {
+            position: absolute;
+            width: 1000px;
+            px;
+            height: 1000px;
+            /*border: 1px solid black;*/
+            padding: 10px;
+        }
+        #alignh > div {
+            float: left;
+            margin: 10px;
+        }
+        #d1 {
+            width: 400px;
+            height: 400px;
+            /*border: 1px solid red;*/
+        }
+
+        #d2 {
+            width: 400px;
+            height: 400px;
+            /*border: 1px solid blue;*/
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="displayDetails(event, 'Product_Summary')">Product Summary</button>
+        <button class="tablinks" onclick="displayDetails(event, 'Product_Details')">Product Details</button>
+        <button class="tablinks" onclick="displayDetails(event, 'Product_Documentation')">Product Documentation</button>
+        <button class="tablinks" onclick="displayDetails(event, 'Contact')">Contact</button>
+    </div>
+
+    <div id="Product_Summary" class="tabcontent" >
+        <h3>Product Summary</h3>
+        <hr />
+        <!--insert a table-->
+        <div id="alignh">
+            <div id="d1">
+                <h5>DESCRIPTION</h5>
+                <table>
+                    <tr>
+                        <th bgcolor="#DDDDDD">Manufacture</th>
+                        <td>LENOVO</td>
+                    </tr>
+                    <tr>
+                        <th bgcolor="#DDDDDD">Series</th>
+                        <td>P52</td>
+                    </tr>
+                    <tr>
+                        <th bgcolor="#DDDDDD">Model</th>
+                        <td>P series</td>
+                    </tr>
+                </table>
+                <hr />
+                <h5>TYPE</h5>
+                <table>
+                    <!---->
+                    <tr>
+                        <th bgcolor="#DDDDDD">Property ID</th>
+                        <td><!----></td>
+                    </tr>
+                    <tr>
+                        <th bgcolor="#DDDDDD">Property Name</th>
+                        <td><!----></td>
+                    </tr>
+                    <!---->
+                    <tr>
+                        <th bgcolor="#DDDDDD">Mounting Location</th>
+                        <td>Home</td>
+                    </tr>
+                    <tr>
+                        <th bgcolor="#DDDDDD">Accessories</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th bgcolor="#DDDDDD">Model Year</th>
+                        <td>2019</td>
+                    </tr>
+                </table>
+            </div>
+            <!---->
+            <div id="d2">
+                <h5>TECHNICAL SPECIFICATIONS</h5>
+                <table>
+                    <tr>
+                        <th bgcolor="#DDDDDD">Property Name</th>
+                        <td><!----></td>
+                    </tr>
+                    <tr>
+                        <th bgcolor="#DDDDDD">Value</th>
+                        <td><!----></td>
+                    </tr>
+                    <tr>
+                        <th bgcolor="#DDDDDD">Min Value</th>
+                        <td><!----></td>
+                    </tr>
+                    <tr>
+                        <th bgcolor="#DDDDDD">Max Value</th>
+                        <td><!----></td>
+                    </tr>
+                </table>
+            </div>
+            <!---->
+        </div>
+    </div>
+
+    <div id="Product_Details" class="tabcontent">
+        <h3>Product Details</h3>
+        <!--insert a table-->
+        <p>hello2</p>
+    </div>
+
+    <div id="Product_Documentation" class="tabcontent">
+        <h3>Product Documentation</h3>
+        <!--insert a table-->
+        <p>hello3</p>
+    </div>
+
+    <div id="Contact" class="tabcontent">
+        <h3>Contact</h3>
+        <!--insert a table-->
+        <p>It is a secret !!!</p>
+    </div>
+    <!--js part-->
+    <script>
+        function displayDetails(evt, pd) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(pd).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
+
+

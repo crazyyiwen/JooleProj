@@ -1,0 +1,181 @@
+﻿@model Joole_MVC_Team1.Models.ProductCmpViewModel
+
+@{
+    ViewBag.Title = "ProductCompare3";
+}
+    <style>
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+<h2>Product Compare</h2>
+
+<div>
+    <div class="row" style="display:flex; width : 50%;">
+        <div class="column" style="flex:70%;">
+            <table style="border-collapse:collapse">
+
+                <tr>
+                    <th colspan="4">COMPARE</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.Manufacture)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.Manufacture)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.Manufacture)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm3.Manufacture)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.Series)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.Series)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.Series)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm3.Series)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.Model)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.Model)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.Model)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm3.Model)
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th colspan="4">TYPE</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.UseType)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.UseType)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.UseType)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.pvm3.UseType)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.Application)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.Application)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.Application)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm3.Application)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.MountingLoaction)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.MountingLoaction)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.MountingLoaction)
+                    </td>
+
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm3.MountingLoaction)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.Accessories)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.Accessories)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.Accessories)
+                    </td>
+
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm3.Accessories)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.pvm1.ModelYear)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm1.ModelYear)
+                    </td>
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm2.ModelYear)
+                    </td>
+
+                    <shadow></shadow>
+                    <td>
+                        @Html.DisplayFor(model => model.pvm3.ModelYear)
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
