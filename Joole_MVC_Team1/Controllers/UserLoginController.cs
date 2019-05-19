@@ -62,8 +62,7 @@ namespace Joole_MVC_Team1.Controllers
                         return View(/*logindata*/);
                     }
                     return View();
-                }
-                
+                }                
             }
             /***********************************************************************************/
 
@@ -104,12 +103,11 @@ namespace Joole_MVC_Team1.Controllers
         [HttpPost]
         public ActionResult SignUpPage(SignUpInfoService inputdata)
         {
-            
+            // insert the data into database
             InsertDataToDatabase IDToD = new InsertDataToDatabase(inputdata.Source ,inputdata.UserName, inputdata.EmailAddress, inputdata.Password);
             IDToD.InsertAction();
             // need to return to Login page
             return RedirectToAction("LoginPage", "UserLogin");
-
         }
     }
 }
